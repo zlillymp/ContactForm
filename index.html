@@ -2,41 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>SBA Financing Contact Form</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
-    <div class="max-w-md w-full bg-white rounded-lg shadow-md p-6">
-        <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">SBA Financing Inquiry</h2>
-        <form id="contactForm" class="space-y-4">
+<body class="bg-gray-100 min-h-screen p-4 md:p-6 lg:p-8">
+    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-6 mt-8">
+        <h2 class="text-3xl font-bold mb-8 text-center text-gray-800">SBA Financing Inquiry</h2>
+        <form id="contactForm" class="space-y-6">
             <div>
-                <label for="businessName" class="block text-sm font-medium text-gray-700">Business Name</label>
-                <input type="text" id="businessName" name="businessName" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                <label for="businessName" class="block text-lg font-medium text-gray-700 mb-2">Business Name</label>
+                <input type="text" id="businessName" name="businessName" required class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-lg p-3">
             </div>
             <div>
-                <label for="businessAddress" class="block text-sm font-medium text-gray-700">Business Address</label>
-                <input type="text" id="businessAddress" name="businessAddress" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                <label for="businessAddress" class="block text-lg font-medium text-gray-700 mb-2">Business Street Address (Optional)</label>
+                <input type="text" id="businessAddress" name="businessAddress" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-lg p-3">
             </div>
             <div>
-                <label for="phone" class="block text-sm font-medium text-gray-700">Phone</label>
-                <input type="tel" id="phone" name="phone" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                <label for="businessCity" class="block text-lg font-medium text-gray-700 mb-2">Business City (Optional)</label>
+                <input type="text" id="businessCity" name="businessCity" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-lg p-3">
             </div>
             <div>
-                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                <label for="businessState" class="block text-lg font-medium text-gray-700 mb-2">Business State (Optional)</label>
+                <input type="text" id="businessState" name="businessState" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-lg p-3">
             </div>
             <div>
-                <label for="website" class="block text-sm font-medium text-gray-700">Website</label>
-                <input type="url" id="website" name="website" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                <label for="businessZip" class="block text-lg font-medium text-gray-700 mb-2">Business Zip (Optional)</label>
+                <input type="text" id="businessZip" name="businessZip" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-lg p-3">
             </div>
             <div>
-                <label for="monthlyIncome" class="block text-sm font-medium text-gray-700">Current Monthly Income</label>
-                <input type="number" id="monthlyIncome" name="monthlyIncome" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                <label for="phone" class="block text-lg font-medium text-gray-700 mb-2">Phone</label>
+                <input type="tel" id="phone" name="phone" required class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-lg p-3" 
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                    oninput="this.value = this.value.replace(/\D/g, '').replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3').substr(0, 12);">
             </div>
             <div>
-                <label for="timeInBusiness" class="block text-sm font-medium text-gray-700">Time in Business</label>
-                <select id="timeInBusiness" name="timeInBusiness" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                <label for="email" class="block text-lg font-medium text-gray-700 mb-2">Email</label>
+                <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-lg p-3">
+            </div>
+            <div>
+                <label for="monthlyIncome" class="block text-lg font-medium text-gray-700 mb-2">Current Monthly Income</label>
+                <div class="relative mt-1 rounded-lg shadow-sm">
+                    <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                    </div>
+                    <input type="text" id="monthlyIncome" name="monthlyIncome" required 
+                        class="block w-full rounded-lg border-gray-300 pl-7 pr-12 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-lg p-3"
+                        placeholder="0.00"
+                        pattern="^\$?([0-9]{1,3},([0-9]{3},)*[0-9]{3}|[0-9]+)(.[0-9][0-9])?$"
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                        onblur="this.value = parseFloat(this.value).toLocaleString('en-US', {style: 'currency', currency: 'USD'});">
+                </div>
+            </div>
+            <div>
+                <label for="timeInBusiness" class="block text-lg font-medium text-gray-700 mb-2">Time in Business</label>
+                <select id="timeInBusiness" name="timeInBusiness" required class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-lg p-3">
                     <option value="">Select an option</option>
                     <option value="less than 2 years">Less than 2 years</option>
                     <option value="2-5 years">2-5 years</option>
@@ -44,7 +63,7 @@
                 </select>
             </div>
             <div>
-                <button type="submit" class="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                <button type="submit" class="w-full py-4 px-6 border border-transparent rounded-lg shadow-sm text-lg font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                     Submit
                 </button>
             </div>
